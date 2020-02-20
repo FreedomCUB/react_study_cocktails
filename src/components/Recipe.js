@@ -16,7 +16,9 @@ const useStyles = makeStyles(theme => ({
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
+    height: '100%',
     width:450,
+    overflowY:'scroll',   
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3)
@@ -92,7 +94,10 @@ const Recipe = ({ recipe }) => {
           >
             <Fade in={open}>
               <div className={cssClass.paper}>
-                <h2>{inf.strDrink}</h2>
+                <button type="button" class="close" onClick={handleClose}>
+                  <span>&times;</span>
+                </button>
+                <h2>{inf.strDrink}</h2>               
                 <h3 className="mt-4">Instructions</h3>
                 <p>{inf.strInstructions}</p>
                 <img
